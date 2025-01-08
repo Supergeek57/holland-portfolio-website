@@ -40,3 +40,36 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Create a starry night effect with CSS */
+.bg-starry-night {
+  background: #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-mountains {
+  background-image: url('./assets/gemini_mountains.jpeg');  /* Ensure this path matches your actual image path */
+  background-size: cover;
+  background-position: center;
+}
+
+
+.bg-starry-night::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('data:image/svg+xml;base64,...') repeat;
+  z-index: -1;
+  opacity: 0.7;
+  animation: moveStars 100s infinite linear;
+}
+
+@keyframes moveStars {
+  0% { background-position: 0 0; }
+  100% { background-position: 100% 100%; }
+}
+
