@@ -3,6 +3,7 @@ import bitmoji from './assets/espresso drink.png';
 import { BrowserRouter as Router, Link, Routes, Route } from 'react-router-dom';
 import About from './About';  // Ensure this component exists
 import Experience from './Experience';
+import skills from './assets/website-skills.png'
 
 function SocialLinks() {
   return (
@@ -40,10 +41,12 @@ function App() {
 
         {/* Main Content */}
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="flex items-center justify-center px-6" style={{ height: 'calc(100vh - 64px)' }}>
+        <Route
+          path="/"
+          element={
+            <div className="flex flex-col items-center justify-center px-6" style={{ height: 'calc(110vh - 64px)' }}>
+              {/* Top Section */}
+              <div className="flex flex-col md:flex-row items-center justify-center w-full mb-10">
                 <div className="flex flex-col items-center md:items-start text-center md:text-left">
                   <div className="font-source-code-pro font-semibold text-5xl text-white">
                     Hi, I'm Holland!
@@ -57,7 +60,7 @@ function App() {
                   </div>
                 </div>
 
-                <div className="ml-10">
+                <div className="ml-0 md:ml-10 mt-6 md:mt-0">
                   <img
                     src={bitmoji}
                     alt="Bitmoji"
@@ -65,8 +68,11 @@ function App() {
                   />
                 </div>
               </div>
-            }
-          />
+              <div className="mb-48"></div>
+            </div>
+          }
+        />
+
           <Route path="/about" element={<About />} />
           <Route path="/experience" element={<Experience />} />
         </Routes>
